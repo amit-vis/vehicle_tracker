@@ -28,7 +28,7 @@ const MapContainers = () => {
   useEffect(() => {
     const fetchVehicleData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/vehicle');
+        const response = await axios.get('https://vehicle-tracker-bpp0.onrender.com/api/vehicle');
         setVehiclePosition(response.data.vehiclePosition);
         setPath(response.data.path);
         if (response.data.path.length > 0) {
@@ -53,7 +53,6 @@ const MapContainers = () => {
         <Marker position={vehiclePosition} icon={vehicleIcon} />
         <Polyline positions={path} color="red" />
       </MapContainer>
-    
     </div>
   );
 };
